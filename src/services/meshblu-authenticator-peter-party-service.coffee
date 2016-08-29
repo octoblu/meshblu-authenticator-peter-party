@@ -1,5 +1,6 @@
 Chance      = require 'chance'
 MeshbluHttp = require 'meshblu-http'
+_           = require 'lodash'
 {PeterCreator, PeterPartyToItselfSubscriber, PeterPartyToPeterSubscriber} = require 'peter-party-planner'
 
 class MeshbluAuthenticatorPeterPartyService
@@ -16,7 +17,7 @@ class MeshbluAuthenticatorPeterPartyService
         return callback @_createError({message: "Error subscribing Peter to himself", error}) if error?
         @partySubscriber.subscribe peter.uuid, (error) =>
           return callback @_createError({message: "Error subscribing the Party to Peter", error}) if error?
-          return callback null, peter
+          return callback null, _.defaults peter, resolveSrv: true
 
   _createError: ({code, message, error}) =>
 

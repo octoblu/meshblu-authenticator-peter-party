@@ -1,6 +1,6 @@
 {
   "name": "meshblu-authenticator-peter-party",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Put some description here",
   "keywords": [
     "Octoblu",
@@ -46,7 +46,7 @@
     "meshblu-config": "^5.1.1",
     "morgan": "^1.6.1",
     "octoblu-raven": "^3.0.1",
-    "peter-party-planner": "^3.1.0",
+    "peter-party-planner": "^3.2.0",
     "server-destroy": "^1.0.1"
   },
   "license": "MIT"
