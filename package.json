@@ -1,0 +1,23 @@
+{
+  "name": "meshblu-authenticator-peter-party",
+  "version": "1.0.0",
+  "description": "Register to vote in the Peter Primaries today!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octoblu/meshblu-authenticator-peter-party.git"
+  },
+  "keywords": [],
+  "author": "Octoblu, <serveradmin@octoblu.com> (https://octoblu.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/octoblu/meshblu-authenticator-peter-party/issues"
+  },
+  "homepage": "https://github.com/octoblu/meshblu-authenticator-peter-party#readme",
+  "dependencies": {
+    "meshblu-authenticator-core": "^3.3.0"
+  }
+}
