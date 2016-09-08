@@ -1,11 +1,13 @@
+MeshbluAuth = require 'express-meshblu-auth'
 MeshbluAuthenticatorPeterPartyController = require './controllers/meshblu-authenticator-peter-party-controller'
 
 class Router
-  constructor: ({@meshbluAuthenticatorPeterPartyService}) ->
+  constructor: ({meshbluConfig, meshbluAuthenticatorPeterPartyService}) ->
+    @meshbluAuthenticatorPeterPartyController = new MeshbluAuthenticatorPeterPartyController {meshbluAuthenticatorPeterPartyService}
+    @meshbluAuth = new MeshbluAuth meshbluConfig
 
   route: (app) =>
-    meshbluAuthenticatorPeterPartyController = new MeshbluAuthenticatorPeterPartyController {@meshbluAuthenticatorPeterPartyService}
-
     app.post '/register', meshbluAuthenticatorPeterPartyController.register
+    app.post '/members', @meshbluAuth.gateway(), enticatorPeterPartyController.addMember
 
 module.exports = Router

@@ -9,6 +9,20 @@ class MeshbluAuthenticatorPeterPartyService
     @creator = new PeterCreator {ownerUUID: @meshbluConfig.uuid, peterPartyUUID: @meshbluConfig.uuid, @meshbluConfig}
     @partySubscriber = new PeterPartyToPeterSubscriber {peterPartyUUID: @meshbluConfig.uuid, @meshbluConfig}
 
+  addMember: ({uuid, token}, callback) =>
+    meshbluHttp = new MeshbluHttp _.defaults({uuid, token}, @meshbluConfig)
+
+    update = {
+      $addToSet:
+        'meshblu.whitelists.configure.sent': {uuid: @meshbluConfig.uuid}
+    }
+
+    meshbluHttp.updateDangerously uuid, update, (error) =>
+      return callback @_createError({message: "Error updating peter's whitelists", error}) if error?
+      @partySubscriber.subscribe uuid, (error) =>
+        return callback @_createError({message: "Error subscribing the Party to Peter", error}) if error?
+        return callback()
+
   register: (callback) =>
     @creator.create name: @chance.name({middle_initial: true, prefix: true, suffix: true}), (error, peter) =>
       return callback @_createError({message: "Error creating peter", error}) if error?
