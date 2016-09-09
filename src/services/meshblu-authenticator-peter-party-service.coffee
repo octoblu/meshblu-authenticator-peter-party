@@ -20,15 +20,18 @@ class MeshbluAuthenticatorPeterPartyService
 
     meshbluHttp.updateDangerously uuid, update, (error) =>
       return callback @_createError({message: "Error updating peter's whitelists", error}) if error?
-      @partySubscriber.subscribe uuid, (error) =>
-        return callback @_createError({message: "Error subscribing the Party to Peter", error}) if error?
-        return callback()
+      selfSubscriber = new PeterPartyToItselfSubscriber {@meshbluConfig, peterPartyUUID: uuid}
+      selfSubscriber.subscribe (error) =>
+        return callback @_createError({message: "Error subscribing Peter to himself", error}) if error?
+        @partySubscriber.subscribe uuid, (error) =>
+          return callback @_createError({message: "Error subscribing the Party to Peter", error}) if error?
+          return callback()
 
   register: (callback) =>
     @creator.create name: @chance.name({middle_initial: true, prefix: true, suffix: true}), (error, peter) =>
       return callback @_createError({message: "Error creating peter", error}) if error?
       selfSubscriber = new PeterPartyToItselfSubscriber {@meshbluConfig, peterPartyUUID: peter.uuid}
-      selfSubscriber.subscribe =>
+      selfSubscriber.subscribe (error) =>
         return callback @_createError({message: "Error subscribing Peter to himself", error}) if error?
         @partySubscriber.subscribe peter.uuid, (error) =>
           return callback @_createError({message: "Error subscribing the Party to Peter", error}) if error?
