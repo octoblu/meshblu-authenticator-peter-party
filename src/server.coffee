@@ -29,7 +29,7 @@ class Server
     app.use packageVersion()
     app.use morgan 'dev', immediate: false unless @disableLogging
     app.use cors()
-    app.use meshbluAuth.auth()
+    app.use @meshbluAuth.auth()
     app.use bodyParser.urlencoded limit: '1mb', extended : true
     app.use bodyParser.json limit : '1mb'
 
