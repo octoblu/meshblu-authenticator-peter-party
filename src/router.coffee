@@ -7,7 +7,7 @@ class Router
     @meshbluAuth = new MeshbluAuth meshbluConfig
 
   route: (app) =>
-    app.post '/register', meshbluAuthenticatorPeterPartyController.register
-    app.post '/members', @meshbluAuth.gateway(), enticatorPeterPartyController.addMember
+    app.post '/register', @meshbluAuthenticatorPeterPartyController.register
+    app.post '/members', @meshbluAuth.gateway(), @meshbluAuthenticatorPeterPartyController.addMember
 
 module.exports = Router
