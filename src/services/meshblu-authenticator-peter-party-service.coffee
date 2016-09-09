@@ -15,6 +15,7 @@ class MeshbluAuthenticatorPeterPartyService
     update = {
       $addToSet:
         'meshblu.whitelists.configure.sent': {uuid: @meshbluConfig.uuid}
+        'meshblu.whitelists.configure.update': {uuid: @meshbluConfig.uuid}
     }
 
     meshbluHttp.updateDangerously uuid, update, (error) =>
