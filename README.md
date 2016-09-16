@@ -9,6 +9,8 @@
 [![NPM](https://nodei.co/npm/meshblu-authenticator-peter-party.svg?style=flat)](https://npmjs.org/package/meshblu-authenticator-peter-party)
 [![Dependency status](http://img.shields.io/david/octoblu/meshblu-authenticator-peter-party.svg?style=flat)](https://david-dm.org/octoblu/meshblu-authenticator-peter-party)
 
+[![Dependency status](http://img.shields.io/david/octoblu/meshblu-authenticator-peter-party.svg?style=flat)](https://david-dm.org/octoblu/meshblu-authenticator-peter-party)
+
 
 ## Installing
 
