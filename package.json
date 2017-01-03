@@ -1,6 +1,6 @@
 {
   "name": "meshblu-authenticator-peter-party",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Put some description here",
   "keywords": [
     "Octoblu",
@@ -39,6 +39,7 @@
     "sinon-chai": "^2.8.0"
   },
   "dependencies": {
+    "async": "^2.1.4",
     "body-parser": "^1.15.2",
     "chance": "^1.0.4",
     "coffee-script": "^1.10.0",
@@ -51,6 +52,7 @@
     "express-send-error": "^1.1.0",
     "lodash": "^4.13.1",
     "meshblu-config": "^5.1.1",
+    "meshblu-http": "^9.3.0",
     "morgan": "^1.6.1",
     "octoblu-raven": "^3.0.1",
     "peter-party-planner": "^4.2.0",
