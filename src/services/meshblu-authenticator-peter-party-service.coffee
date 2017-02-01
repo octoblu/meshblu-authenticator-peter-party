@@ -45,7 +45,7 @@ class MeshbluAuthenticatorPeterPartyService
     meshbluHttp.device @meshbluConfig.uuid, (error, device) =>
       return callback @_createError({ message: "Error getting user group device", error}) if error?
       roomGroupStatusUuid = _.get(device, 'genisys.devices.room-group-status.uuid')
-      return callback @_createError({ message: "Error getting room group status uuid"}) if _.isEmpty(roomGroupStatusUuid)
+      return callback @_createError({ message: "Error getting room group status uuid", code: 404}) if _.isEmpty(roomGroupStatusUuid)
       return callbak null, roomGroupStatusUuid
 
   _grantMemberViewPermissionToRoomGroupStatus: ({ memberUuid, roomGroupStatusUuid }, callback) =>
