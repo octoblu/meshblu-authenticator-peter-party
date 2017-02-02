@@ -53,6 +53,7 @@ class MeshbluAuthenticatorPeterPartyService
     update = {
       $addToSet:
         'meshblu.whitelists.discover.view': { uuid: memberUuid }
+        'meshblu.whitelists.configure.sent': { uuid: memberUuid }
     }
     meshbluHttp.updateDangerously roomGroupStatusUuid, update, (error) =>
       return callback @_createError({message: "Error updating room group status discover whitelist", error}) if error?
