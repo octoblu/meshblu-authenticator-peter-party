@@ -46,13 +46,13 @@ class MeshbluAuthenticatorPeterPartyService
       return callback @_createError({ message: "Error getting user group device", error}) if error?
       roomGroupStatusUuid = _.get(device, 'genisys.devices.room-group-status.uuid')
       return callback @_createError({ message: "Error getting room group status uuid", code: 404}) if _.isEmpty(roomGroupStatusUuid)
-      return callbak null, roomGroupStatusUuid
+      return callback null, roomGroupStatusUuid
 
   _grantMemberViewPermissionToRoomGroupStatus: ({ memberUuid, roomGroupStatusUuid }, callback) =>
     meshbluHttp = new MeshbluHttp @meshbluConfig
     update = {
       $addToSet:
-        'meshblu.whitelists.discover.view':   {uuid: memberUuid}
+        'meshblu.whitelists.discover.view': { uuid: memberUuid }
     }
     meshbluHttp.updateDangerously roomGroupStatusUuid, update, (error) =>
       return callback @_createError({message: "Error updating room group status discover whitelist", error}) if error?
