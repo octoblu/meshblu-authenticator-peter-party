@@ -14,11 +14,10 @@ class MeshbluAuthenticatorPeterPartyService
     memberUuid  = uuid
 
     @_getRoomGroupStatusUuid (error, roomGroupStatusUuid) =>
+      return callback error if error?
       @_grantMemberViewPermissionToRoomGroupStatus {memberUuid, memberToken, roomGroupStatusUuid}, (error) =>
         return callback error if error?
-        @_updateMember {memberUuid, memberToken, roomGroupStatusUuid}, (error) =>
-          return callback error if error?
-          return callback()
+        @_updateMember {memberUuid, memberToken, roomGroupStatusUuid}, callback
 
 
   register: (callback) =>
