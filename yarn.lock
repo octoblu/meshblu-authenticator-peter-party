@@ -1280,12 +1280,28 @@ merge-descriptors@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
 
-meshblu-config@^5.1.1, meshblu-config@^5.2.0:
+meshblu-config@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/meshblu-config/-/meshblu-config-5.2.0.tgz#7794529c8db25992486c3c6138ea84953c9346ce"
   dependencies:
     coffee-script "^1.9.2"
     lodash "^3.9.1"
+
+meshblu-config@^6.4.3:
+  version "6.4.3"
+  resolved "https://registry.yarnpkg.com/meshblu-config/-/meshblu-config-6.4.3.tgz#c0bd8f6607fa952afd259978b910ab6398f73e49"
+  dependencies:
+    coffee-script "^1.9.2"
+    lodash "^3.9.1"
+    meshblu-encryption "^2.0.1"
+
+meshblu-encryption@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/meshblu-encryption/-/meshblu-encryption-2.0.1.tgz#84767397b78763732e93e6aa90633f848f3c77db"
+  dependencies:
+    coffee-script "^1.10.0"
+    lodash "^4.6.1"
+    node-rsa "^0.3.2"
 
 meshblu-http@^5.4.0:
   version "5.5.0"
@@ -1309,9 +1325,9 @@ meshblu-http@^7.1.0:
     node-rsa "^0.4.2"
     request "^2.72.0"
 
-meshblu-http@^9.3.0:
-  version "9.3.0"
-  resolved "https://registry.yarnpkg.com/meshblu-http/-/meshblu-http-9.3.0.tgz#d5a8853761d723845bdbaddc6e38b3f9e5680854"
+meshblu-http@^9.4.0:
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/meshblu-http/-/meshblu-http-9.4.0.tgz#d958d074d0168f306d675da812729d60f4a39a94"
   dependencies:
     coffee-script "^1.9.1"
     debug "^2.1.3"
@@ -1463,6 +1479,12 @@ node-rsa@^0.2.23:
   dependencies:
     asn1 "0.2.3"
     lodash "3.3.0"
+
+node-rsa@^0.3.2:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/node-rsa/-/node-rsa-0.3.4.tgz#0d13c73d3cbe3b3dc7457a81a2657f40e4426be6"
+  dependencies:
+    asn1 "0.2.3"
 
 node-rsa@^0.4.2:
   version "0.4.2"

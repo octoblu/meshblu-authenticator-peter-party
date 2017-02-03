@@ -1,6 +1,6 @@
 {
   "name": "meshblu-authenticator-peter-party",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "description": "Put some description here",
   "keywords": [
     "Octoblu",
@@ -51,8 +51,8 @@
     "express-package-version": "^0.0.2",
     "express-send-error": "^1.1.0",
     "lodash": "^4.13.1",
-    "meshblu-config": "^5.1.1",
-    "meshblu-http": "^9.3.0",
+    "meshblu-config": "^6.4.3",
+    "meshblu-http": "^9.4.0",
     "morgan": "^1.6.1",
     "octoblu-raven": "^3.0.1",
     "peter-party-planner": "^4.2.0",
