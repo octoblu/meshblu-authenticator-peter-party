@@ -1,6 +1,7 @@
 Chance      = require 'chance'
-MeshbluHttp = require 'meshblu-http'
 _           = require 'lodash'
+MeshbluHttp = require 'meshblu-http'
+RefResolver = require 'meshblu-json-schema-resolver'
 {PeterCreator, PeterPartyToItselfSubscriber, PeterPartyToPeterSubscriber} = require 'peter-party-planner'
 
 class MeshbluAuthenticatorPeterPartyService
@@ -40,12 +41,15 @@ class MeshbluAuthenticatorPeterPartyService
 
   _getRoomGroupStatusUuid: (callback) =>
     meshbluHttp = new MeshbluHttp @meshbluConfig
+    resolver    = new RefResolver {@meshbluConfig}
 
     meshbluHttp.device @meshbluConfig.uuid, (error, device) =>
       return callback @_createError({ message: "Error getting user group device", error}) if error?
-      roomGroupStatusUuid = _.get(device, 'genisys.devices.room-group-status.uuid')
-      return callback @_createError({ message: "Error getting room group status uuid", code: 404}) if _.isEmpty(roomGroupStatusUuid)
-      return callback null, roomGroupStatusUuid
+      resolver.resolve device, (error, resolved) =>
+        return callback @_createError({ message: "Error resolving user group $ref", error}) if error?
+        roomGroupStatusUuid = _.get(resolved, 'genisys.customerDevices.roomGroupStatus.uuid')
+        return callback @_createError({ message: "Error getting room group status uuid", code: 404}) if _.isEmpty(roomGroupStatusUuid)
+        return callback null, roomGroupStatusUuid
 
   _grantMemberViewPermissionToRoomGroupStatus: ({ memberUuid, roomGroupStatusUuid }, callback) =>
     meshbluHttp = new MeshbluHttp @meshbluConfig
