@@ -53,14 +53,22 @@ class MeshbluAuthenticatorPeterPartyService
 
   _grantMemberViewPermissionToRoomGroupStatus: ({ memberUuid, roomGroupStatusUuid }, callback) =>
     meshbluHttp = new MeshbluHttp @meshbluConfig
-    update = {
-      $addToSet:
-        'meshblu.whitelists.discover.view': { uuid: memberUuid }
-        'meshblu.whitelists.configure.sent': { uuid: memberUuid }
-    }
-    meshbluHttp.updateDangerously roomGroupStatusUuid, update, (error) =>
-      return callback @_createError({message: "Error updating room group status discover whitelist", error}) if error?
-      return callback()
+    resolver    = new RefResolver {@meshbluConfig}
+
+    meshbluHttp.device @meshbluConfig.uuid, (error, device) =>
+      return callback @_createError({ message: "Error getting user group device", error}) if error?
+      resolver.resolve device, (error, resolved) =>
+        return callback @_createError({ message: "Error resolving user group $ref", error}) if error?
+        customerId = _.get(resolved, 'genisys.customerDevices.customer.uuid')
+
+        update = {
+          $addToSet:
+            'meshblu.whitelists.discover.view': { uuid: memberUuid }
+            'meshblu.whitelists.configure.sent': { uuid: memberUuid }
+        }
+        meshbluHttp.updateDangerously roomGroupStatusUuid, update, {as: customerId}, (error) =>
+          return callback @_createError({message: "Error updating room group status discover whitelist", error}) if error?
+          return callback()
 
   _updateMember: ({ memberUuid, memberToken, roomGroupStatusUuid },  callback) =>
     meshbluHttp = new MeshbluHttp _.defaults({uuid: memberUuid, token: memberToken}, @meshbluConfig)
