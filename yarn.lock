@@ -105,7 +105,7 @@ async@^1.4.0, async@^1.4.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
-async@^2.0.1, async@^2.1.5:
+async@^2.1.5:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/async/-/async-2.1.5.tgz#e587c68580994ac67fc56ff86d3ac56bdbe810bc"
   dependencies:
@@ -375,7 +375,7 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-coffee-script@^1.10.0, coffee-script@^1.11.1, coffee-script@^1.12.4, coffee-script@^1.9.0, coffee-script@^1.9.1, coffee-script@^1.9.2:
+coffee-script@^1.10.0, coffee-script@^1.11.1, coffee-script@^1.12.4, coffee-script@^1.9.1, coffee-script@^1.9.2:
   version "1.12.4"
   resolved "https://registry.yarnpkg.com/coffee-script/-/coffee-script-1.12.4.tgz#fe1bced97fe1fb3927b998f2b45616e0658be1ff"
 
@@ -509,21 +509,21 @@ cryptiles@2.x.x:
   dependencies:
     boom "2.x.x"
 
-cson-parser@^1.0.6:
+cson-parser@^1.3.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/cson-parser/-/cson-parser-1.3.5.tgz#7ec675e039145533bf2a6a856073f1599d9c2d24"
   dependencies:
     coffee-script "^1.10.0"
 
-cson@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/cson/-/cson-3.0.2.tgz#83ee9089db3c254bec1e98e498d9aacf11adcc54"
+cson@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/cson/-/cson-4.0.0.tgz#61fe6d6e2e5653f6be5013dede74afe462586a52"
   dependencies:
-    coffee-script "^1.9.0"
-    cson-parser "^1.0.6"
-    extract-opts "^3.0.1"
-    requirefresh "^2.0.0"
-    safefs "^4.0.0"
+    coffee-script "^1.11.1"
+    cson-parser "^1.3.4"
+    extract-opts "^3.3.1"
+    requirefresh "^2.1.0"
+    safefs "^4.1.0"
 
 dashdash@^1.12.0, dashdash@^1.14.0:
   version "1.14.1"
@@ -768,7 +768,7 @@ extglob@^0.3.1:
   dependencies:
     is-extglob "^1.0.0"
 
-extract-opts@^3.0.1:
+extract-opts@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/extract-opts/-/extract-opts-3.3.1.tgz#5abbedc98c0d5202e3278727f9192d7e086c6be1"
   dependencies:
@@ -1354,7 +1354,7 @@ lodash@^3.9.1:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.13.1, lodash@^4.14.0, lodash@^4.14.2, lodash@^4.16.4, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.6.1:
+lodash@^4.13.1, lodash@^4.14.0, lodash@^4.16.4, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.6.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -1411,13 +1411,6 @@ merge-source-map@^1.0.2:
   dependencies:
     source-map "^0.5.3"
 
-meshblu-config@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/meshblu-config/-/meshblu-config-5.2.0.tgz#7794529c8db25992486c3c6138ea84953c9346ce"
-  dependencies:
-    coffee-script "^1.9.2"
-    lodash "^3.9.1"
-
 meshblu-config@^6.4.3:
   version "6.4.3"
   resolved "https://registry.yarnpkg.com/meshblu-config/-/meshblu-config-6.4.3.tgz#c0bd8f6607fa952afd259978b910ab6398f73e49"
@@ -1433,17 +1426,6 @@ meshblu-encryption@^2.0.1:
     coffee-script "^1.10.0"
     lodash "^4.6.1"
     node-rsa "^0.3.2"
-
-meshblu-http@^7.1.0:
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/meshblu-http/-/meshblu-http-7.4.0.tgz#ea0cf81f191129dda9368e23be796ef7aec49fb4"
-  dependencies:
-    coffee-script "^1.9.1"
-    debug "^2.1.3"
-    json-stable-stringify "^1.0.0"
-    lodash "^4.13.1"
-    node-rsa "^0.4.2"
-    request "^2.72.0"
 
 meshblu-http@^9.7.2, meshblu-http@^9.8.0:
   version "9.8.0"
@@ -1780,18 +1762,18 @@ performance-now@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
 
-peter-party-planner@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/peter-party-planner/-/peter-party-planner-4.2.0.tgz#5e5fcb77e0c31d5a404c2a931d4056f58a95fddf"
+peter-party-planner@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/peter-party-planner/-/peter-party-planner-4.2.1.tgz#94dedb14cffe56248fd0135b08579cad97b1fd47"
   dependencies:
-    async "^2.0.1"
-    coffee-script "^1.10.0"
+    async "^2.1.5"
+    coffee-script "^1.12.4"
     colors "^1.1.2"
-    cson "^3.0.2"
+    cson "^4.0.0"
     dashdash "^1.14.0"
-    lodash "^4.14.2"
-    meshblu-config "^5.2.0"
-    meshblu-http "^7.1.0"
+    lodash "^4.17.4"
+    meshblu-config "^6.4.3"
+    meshblu-http "^9.8.0"
 
 pify@^2.0.0:
   version "2.3.0"
@@ -1994,7 +1976,7 @@ require-main-filename@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/require-main-filename/-/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
 
-requirefresh@^2.0.0:
+requirefresh@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/requirefresh/-/requirefresh-2.1.0.tgz#742dccc20f3a96918d66c6f1597dc8ffebc4f6f5"
   dependencies:
@@ -2020,7 +2002,7 @@ rimraf@^2.3.3, rimraf@^2.4.3, rimraf@^2.4.4, rimraf@^2.5.4:
   dependencies:
     glob "^7.0.5"
 
-safefs@^4.0.0:
+safefs@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/safefs/-/safefs-4.1.0.tgz#f82aeb4bdd7ae51f653eb20f6728b3058c8d6445"
   dependencies:
